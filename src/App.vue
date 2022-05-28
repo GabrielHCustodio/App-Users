@@ -11,7 +11,7 @@ export default {
 <style>
 * {
   margin: 0;
-  padding: 5px;
+  padding: 0;
   box-sizing: border-box;
 }
 </style>

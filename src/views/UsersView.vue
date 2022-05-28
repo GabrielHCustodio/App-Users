@@ -25,7 +25,7 @@ export default {
 
 .background {
   width: 414px;
-  height: 896px;
+  height: 804px;
   background-image: url('/public/images/bg-peoples.svg');
 }
 </style>
