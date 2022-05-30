@@ -1,18 +1,23 @@
 <template>
   <div class="about">
-    <div class="background">
-      <h1>Usuários cadastrados</h1>
+    <div class="bg">
+      <image-template />
 
-      <button>
-        <router-link to="/">Voltar</router-link>
-      </button>
+      <container-back></container-back>
     </div>
   </div>
 </template>
 
 <script>
-export default {
 
+import containerBack from "@/components/comuns/ContainerBack.vue";
+import imageTemplate from "@/components/comuns/ImageTemplate.vue";
+
+export default {
+  components: {
+    containerBack,
+    imageTemplate
+  }
 }
 </script>
 
@@ -23,9 +28,18 @@ export default {
   justify-content: center;
 }
 
-.background {
-  width: 414px;
+.bg {
+  max-width: 414px;
+  width: 100%;
   height: 804px;
   background-image: url('/public/images/bg-peoples.svg');
+}
+
+.img-template {
+  width: 307px;
+  height: 99px;
+  margin: 70px 53px;
+  background-image: url("/public/images/peoples.svg");
+  background-size: cover;
 }
 </style>

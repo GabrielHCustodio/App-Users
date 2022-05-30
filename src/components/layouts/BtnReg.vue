@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: "btnReg",
-};
+  name: 'btnReg'
+}
 </script>
 
 <style scoped>

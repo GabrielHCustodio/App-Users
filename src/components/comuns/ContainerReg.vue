@@ -1,6 +1,6 @@
 <template>
   <div class="container-inputs">
-    <text-title />
+    <text-title title="Olá!" />
 
     <inputs-form />
 
@@ -14,7 +14,7 @@ import btnReg from "@/components/layouts/BtnReg.vue";
 import textTitle from "@/components/comuns/Text.vue"
 
 export default {
-  name: "container",
+  name: "containerReg",
   components: {
     inputsForm,
     btnReg,
@@ -37,5 +37,10 @@ export default {
     rgba(255, 255, 255, 0.15) 100%
   );
   border-radius: 61px 61px 0px 0px;
+}
+
+.text {
+  margin-top: 50px;
+  margin-bottom: 61px;
 }
 </style>
