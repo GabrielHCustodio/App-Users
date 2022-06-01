@@ -23,9 +23,36 @@ export default {
   },
   mounted() {
     this.$emitter.on('informations' , () => {
-      console.log(this.name)
-      console.log(this.age)
+      let users = JSON.parse(localStorage.getItem('users'))
+
+        if(!users) users = []
+        users.push({
+          name: this.name,
+          age: this.age,
+        })
+
+        if(this.validateForm()) {
+          localStorage.setItem('users' , JSON.stringify(users))
+          this.resetForm()
+          console.log('Cadastrou feito com sucesso!!!')
+        }
+        else {
+          console.log('Por favor, verifique se todos os campos estão preenchidos corretamente.')
+        }
+
     })
+  },
+  methods: {
+    resetForm() {
+      this.name = "",
+      this.age = ""
+    },
+    validateForm() {
+      let validate = true
+      if(this.name === '') validate = false
+      if(this.age === '') validate = false
+      return validate
+    }
   }
 };
 </script>
@@ -54,3 +81,24 @@ export default {
   color: #eeeeee;
 }
 </style>
+
+
+<!--if(this.validaForm()) {
+        localStorage.setItem('vagas', JSON.stringify(vagas))
+        this.$emitter.emit('alerta', {
+          tipo: 'sucesso',
+          titulo: `A vaga ${this.titulo} foi criada com sucesso`,
+          descricao: `Parabéns, a vaga foi cadastrada e poderá ser consultada por milhares de candidatos na nossa plataforma.`
+        })
+        this.resetForm()
+      }
+      
+      else {
+        this.$emitter.emit('alerta', {
+          tipo: 'erro',
+          titulo: `-_- Opss, não foi possível realizar o cadastro. `,
+          descricao: `Alguma informação não foi preenchida corretamente , faça o ajuste e tente novamente. Obrigado.`
+        })
+      }
+    }
+    -->

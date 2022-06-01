@@ -14,15 +14,11 @@ export default {
     name: 'usersRegister',
     data() {
         return {
-            usersRegister: [
-                {name: 'Gabriel' , age: 22},
-                {name: 'Guilherme' , age: 24},
-                {name: 'Ana Julia' , age: 19},
-                {name: 'Mayra' , age: 29},
-                {name: 'Carlos' , age: 45},
-                {name: 'Mariana' , age: 20}
-            ]
+            usersRegister: []
         }
+    },
+    mounted() {
+        this.usersRegister = JSON.parse(localStorage.getItem('users'))
     },
     methods: {
         dlt() {
