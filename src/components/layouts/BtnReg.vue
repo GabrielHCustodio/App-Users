@@ -1,12 +1,17 @@
 <template>
   <div class="router">
-    <router-link class="btn" to="/usersView">Cadastrar</router-link>
+    <router-link to="/usersView" class="btn" @click="register">Cadastrar</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'btnReg'
+  name: 'btnReg',
+  methods: {
+    register() {
+      this.$emitter.emit('informations')
+    }
+  }
 }
 </script>
 

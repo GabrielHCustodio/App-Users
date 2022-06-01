@@ -1,28 +1,34 @@
 <template>
     <div class="registers">
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
-            <li>11</li>
-            <li>12</li>
-            <li>13</li>
-            <li>14</li>
-            <li>15</li>
-        </ul>
+        <div class="usersReg" v-for="(u, index) in usersRegister" :key="index">
+            <div id="name"><p>{{u.name}}</p></div>
+            <div id="age"><p>{{u.age}} anos</p></div>
+            <div class="img" @click="dlt"></div>
+        </div>
+
     </div>
 </template>
 
 <script>
 export default {
-    name: 'usersRegister'
+    name: 'usersRegister',
+    data() {
+        return {
+            usersRegister: [
+                {name: 'Gabriel' , age: 22},
+                {name: 'Guilherme' , age: 24},
+                {name: 'Ana Julia' , age: 19},
+                {name: 'Mayra' , age: 29},
+                {name: 'Carlos' , age: 45},
+                {name: 'Mariana' , age: 20}
+            ]
+        }
+    },
+    methods: {
+        dlt() {
+            console.log('Excluido')
+        }
+    }
 }
 </script>
 
@@ -38,8 +44,37 @@ export default {
     display: none;
 }
 
-.registers ul li {
-    font-size: 30px;
-    margin-top: 20px;
+.registers .usersReg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 342px;
+    height: 58px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    margin-bottom: 28px;
+}
+
+.usersReg #name,
+.usersReg #age {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.usersReg #name p,
+.usersReg #age p {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.usersReg .img {
+    background-image: url('/public/images/recycleBin.svg');
+    width: 24px;
+    height: 28px;
+    cursor: pointer;
+    margin-right: 0;
 }
 </style>

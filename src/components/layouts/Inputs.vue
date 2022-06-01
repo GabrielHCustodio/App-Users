@@ -2,12 +2,12 @@
   <div>
     <div class="inputs">
       <label for="">Nome</label> <br />
-      <input type="text" />
+      <input type="text" v-model="name" />
     </div>
 
     <div class="inputs">
       <label for="">Idade</label> <br />
-      <input type="number" />
+      <input type="number" v-model="age" />
     </div>
   </div>
 </template>
@@ -15,6 +15,18 @@
 <script>
 export default {
   name: "inputsForm",
+  data() {
+    return {
+      name: '',
+      age: ''
+    }
+  },
+  mounted() {
+    this.$emitter.on('informations' , () => {
+      console.log(this.name)
+      console.log(this.age)
+    })
+  }
 };
 </script>
 
