@@ -1,9 +1,9 @@
 <template>
     <div class="registers">
-        <div class="usersReg" v-for="(u, index) in usersRegister" :key="index">
+        <div class="usersReg" v-for="u in usersRegister" :key="u.id">
             <div id="name"><p>{{u.name}}</p></div>
             <div id="age"><p>{{u.age}} anos</p></div>
-            <div class="img" @click="dlt"></div>
+            <div class="img" @click="dlt(u.id)"></div>
         </div>
 
     </div>
@@ -21,8 +21,8 @@ export default {
         this.usersRegister = JSON.parse(localStorage.getItem('users'))
     },
     methods: {
-        dlt() {
-            console.log('Excluido')
+        dlt(id) {
+            this.usersRegister.splice(id, 1)
         }
     }
 }

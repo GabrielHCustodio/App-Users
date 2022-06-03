@@ -29,6 +29,7 @@ export default {
         users.push({
           name: this.name,
           age: this.age,
+          id: Math.random()
         })
 
         if(this.validateForm()) {
