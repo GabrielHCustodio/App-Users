@@ -10,8 +10,8 @@
 
 <script>
 
-import containerReg from "@/components/comuns/ContainerReg.vue";
-import imageTemplate from "@/components/comuns/ImageTemplate.vue";
+import containerReg from "@/components/layouts/ContainerReg.vue";
+import imageTemplate from "@/components/layouts/ImageTemplate.vue";
 
 export default {
   components: {

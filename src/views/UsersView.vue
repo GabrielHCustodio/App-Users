@@ -10,8 +10,8 @@
 
 <script>
 
-import containerBack from "@/components/comuns/ContainerBack.vue";
-import imageTemplate from "@/components/comuns/ImageTemplate.vue";
+import containerBack from "@/components/layouts/ContainerBack.vue";
+import imageTemplate from "@/components/layouts/ImageTemplate.vue";
 
 export default {
   components: {

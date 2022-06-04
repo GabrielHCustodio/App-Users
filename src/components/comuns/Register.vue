@@ -20,9 +20,22 @@ export default {
     mounted() {
         this.usersRegister = JSON.parse(localStorage.getItem('users'))
     },
+    updated() {
+        this.usersRegister = JSON.parse(localStorage.getItem('users'))
+    },
     methods: {
         dlt(id) {
-            this.usersRegister.splice(id, 1)
+            let index = this.usersRegister
+
+            function removeItem(index, prop, value) {
+                return index.filter(function(i) {
+                    return i[prop] !== value
+                })
+            }
+
+            var newUsers = removeItem(index, "id" , id)
+
+            this.usersRegister = localStorage.setItem('users' , JSON.stringify(newUsers))
         }
     }
 }

@@ -1,24 +1,24 @@
 <template>
   <div class="container-inputs">
-    <text-title title="Olá!" />
+    <text-title title="Usuários" />
 
-    <inputs-form />
+    <users-register />
 
-    <btn-reg />
+    <btn-back />
   </div>
 </template>
 
 <script>
-import inputsForm from "@/components/layouts/Inputs.vue";
-import btnReg from "@/components/layouts/BtnReg.vue";
+import usersRegister from "@/components/comuns/Register.vue";
+import btnBack from "@/components/comuns/BtnBack.vue"
 import textTitle from "@/components/comuns/Text.vue"
 
 export default {
-  name: "containerReg",
+  name: "containerBack",
   components: {
-    inputsForm,
-    btnReg,
-    textTitle
+    btnBack,
+    textTitle,
+    usersRegister
   },
 };
 </script>
@@ -37,10 +37,12 @@ export default {
     rgba(255, 255, 255, 0.15) 100%
   );
   border-radius: 61px 61px 0px 0px;
+  position: relative;
 }
 
 .text {
   margin-top: 50px;
-  margin-bottom: 61px;
+  margin-bottom: 31px;
 }
+
 </style>
