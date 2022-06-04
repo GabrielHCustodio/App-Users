@@ -34,11 +34,15 @@ export default {
 
         if(this.validateForm()) {
           localStorage.setItem('users' , JSON.stringify(users))
+          this.$emitter.emit('alert', {
+            msg: "Cadastro realizado com sucesso."
+          })
           this.resetForm()
-          console.log('Cadastrou feito com sucesso!!!')
         }
         else {
-          console.log('Por favor, verifique se todos os campos estão preenchidos corretamente.')
+          this.$emitter.emit('alert', {
+            msg: "-_- Opss, verfique os campos."
+          })
         }
 
     })

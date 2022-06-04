@@ -24,7 +24,7 @@ export default {
 }
 
 .router .btn {
-  margin-top: 75px;
+  margin-top: 45px;
   width: 342px;
   height: 58px;
   background: rgba(0, 0, 0, 0.8);

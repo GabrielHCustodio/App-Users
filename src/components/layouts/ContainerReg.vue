@@ -1,9 +1,12 @@
 <template>
   <div class="container-inputs">
     <text-title title="Olá!" />
-
     <inputs-form />
-
+    <msg-alert v-if="displayAlert">
+      <div>
+        <p>{{alert.msg}}</p>
+      </div>
+    </msg-alert>
     <btn-reg />
   </div>
 </template>
@@ -11,15 +14,31 @@
 <script>
 import inputsForm from "@/components/comuns/Inputs.vue";
 import btnReg from "@/components/comuns/BtnReg.vue";
-import textTitle from "@/components/comuns/Text.vue"
+import textTitle from "@/components/comuns/Text.vue";
+import msgAlert from "@/components/comuns/Alerta.vue"
 
 export default {
   name: "containerReg",
+  data() {
+    return {
+      alert: {},
+      displayAlert: false
+    }
+  },
   components: {
     inputsForm,
     btnReg,
-    textTitle
+    textTitle,
+    msgAlert
   },
+  mounted() {
+    this.$emitter.on('alert', (a) => {
+      this.alert = a
+      this.displayAlert = true
+      setTimeout(() => this.displayAlert = false, 3000)
+      console.log('Cheguei BRASILLLLL!')
+    })
+  }
 };
 </script>
 
