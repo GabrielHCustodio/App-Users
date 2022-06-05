@@ -35,12 +35,14 @@ export default {
         if(this.validateForm()) {
           localStorage.setItem('users' , JSON.stringify(users))
           this.$emitter.emit('alert', {
+            tipo: "success",
             msg: "Cadastro realizado com sucesso."
           })
           this.resetForm()
         }
         else {
           this.$emitter.emit('alert', {
+            tipo: "error",
             msg: "-_- Opss, verfique os campos."
           })
         }
@@ -86,24 +88,3 @@ export default {
   color: #eeeeee;
 }
 </style>
-
-
-<!--if(this.validaForm()) {
-        localStorage.setItem('vagas', JSON.stringify(vagas))
-        this.$emitter.emit('alerta', {
-          tipo: 'sucesso',
-          titulo: `A vaga ${this.titulo} foi criada com sucesso`,
-          descricao: `Parabéns, a vaga foi cadastrada e poderá ser consultada por milhares de candidatos na nossa plataforma.`
-        })
-        this.resetForm()
-      }
-      
-      else {
-        this.$emitter.emit('alerta', {
-          tipo: 'erro',
-          titulo: `-_- Opss, não foi possível realizar o cadastro. `,
-          descricao: `Alguma informação não foi preenchida corretamente , faça o ajuste e tente novamente. Obrigado.`
-        })
-      }
-    }
-    -->

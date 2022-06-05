@@ -2,11 +2,7 @@
   <div class="container-inputs">
     <text-title title="Olá!" />
     <inputs-form />
-    <msg-alert v-if="displayAlert">
-      <div>
-        <p>{{alert.msg}}</p>
-      </div>
-    </msg-alert>
+    <msg-alert v-if="displayAlert" :tipo="alert.tipo" :msg="alert.msg" />
     <btn-reg />
   </div>
 </template>
@@ -21,7 +17,7 @@ export default {
   name: "containerReg",
   data() {
     return {
-      alert: {},
+      alert: { msg: '' , tipo: ''},
       displayAlert: false
     }
   },
@@ -36,7 +32,7 @@ export default {
       this.alert = a
       this.displayAlert = true
       setTimeout(() => this.displayAlert = false, 3000)
-      console.log('Cheguei BRASILLLLL!')
+
     })
   }
 };
@@ -59,7 +55,8 @@ export default {
 }
 
 .text {
-  margin-top: 50px;
-  margin-bottom: 61px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
+
 </style>
