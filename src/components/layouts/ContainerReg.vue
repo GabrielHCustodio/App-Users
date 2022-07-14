@@ -2,7 +2,6 @@
   <div class="container-inputs">
     <text-title title="Olá!" />
     <inputs-form />
-    <msg-alert v-if="displayAlert" :tipo="alert.tipo" :msg="alert.msg" />
     <btn-reg />
   </div>
 </template>
@@ -11,29 +10,13 @@
 import inputsForm from "@/components/comuns/Inputs.vue";
 import btnReg from "@/components/comuns/BtnReg.vue";
 import textTitle from "@/components/comuns/Text.vue";
-import msgAlert from "@/components/comuns/Alerta.vue"
 
 export default {
   name: "containerReg",
-  data() {
-    return {
-      alert: { msg: '' , tipo: ''},
-      displayAlert: false
-    }
-  },
   components: {
     inputsForm,
     btnReg,
     textTitle,
-    msgAlert
-  },
-  mounted() {
-    this.$emitter.on('alert', (a) => {
-      this.alert = a
-      this.displayAlert = true
-      setTimeout(() => this.displayAlert = false, 3000)
-
-    })
   }
 };
 </script>

@@ -1,7 +1,6 @@
 <template>
   <div class="router">
-    <button class="btn" @click="register">Cadastrar</button>
-    <router-link class="btnUsers" to="/usersView" >Usuários</router-link>
+    <router-link class="btnUsers" to="/usersView" @click="register">Cadastrar</router-link>
   </div>
 </template>
 
@@ -23,7 +22,11 @@ export default {
   flex-direction: column;
 }
 
-.router .btn {
+.router a {
+  text-decoration: none;
+}
+
+.router .btnUsers {
   margin-top: 45px;
   width: 342px;
   height: 58px;
@@ -37,16 +40,8 @@ export default {
   padding: 18px;
 }
 
-.router .btn:hover {
+.router .btnUsers:hover {
   cursor: pointer;
   opacity: 0.9;
-}
-
-.router .btnUsers {
-  margin-top: 20px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: #ffffff;
-  text-align: right;
 }
 </style>

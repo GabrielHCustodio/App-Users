@@ -34,19 +34,8 @@ export default {
 
         if(this.validateForm()) {
           localStorage.setItem('users' , JSON.stringify(users))
-          this.$emitter.emit('alert', {
-            tipo: "success",
-            msg: "Cadastro realizado com sucesso."
-          })
           this.resetForm()
         }
-        else {
-          this.$emitter.emit('alert', {
-            tipo: "error",
-            msg: "-_- Opss, verfique os campos."
-          })
-        }
-
     })
   },
   methods: {
